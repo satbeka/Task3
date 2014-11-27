@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="flowers" type="flowersType">
+    <xs:annotation>
+      <xs:documentation>1. Оранжерея.
+Растения, содержащиеся в оранжерее, имеют следующие характеристики:
+——Name — название растения;
+——Soil — почва для посадки, которая может быть следующих типов: под-
+золистая, грунтовая, дерново-подзолистая;
+——Origin — место происхождения растения;
+——Visual рarameters (должно быть несколько) — внешние параметры: цвет
+стебля, цвет листьев, средний размер растения;
+——Growing tips (должно быть несколько) — предпочтительные условия
+произрастания: температура (в градусах), освещение (светолюбиво либо
+нет), полив (мл в неделю);
+——Multiplying — размножение: листьями, черенками либо семенами.
+Корневой элемент назвать Flower.
+С помощью XSL преобразовать XML-файл в формат HTML, где отобра-
+зить растения по предпочитаемой температуре
+(по возрастанию). flowers in orangery</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="flowerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name"/>
+      <xs:element type="xs:string" name="Soil"/>
+      <xs:element type="xs:string" name="Origin"/>
+      <xs:element type="visualParametersType" name="visualParameters"/>
+      <xs:element type="growingTipsType" name="growingTips"/>
+      <xs:element type="xs:string" name="multiplying"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="flowersType">
+    <xs:sequence>
+      <xs:element type="flowerType" name="flower"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="visualParametersType">
+    <xs:sequence>
+      <xs:element ref="sat:colourStem" xmlns:sat="www.epam.kz/sat/"/>
+      <xs:element ref="sat:colourLeaf" xmlns:sat="www.epam.kz/sat/"/>
+      <xs:element ref="sat:middleSize" xmlns:sat="www.epam.kz/sat/"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="growingTipsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="temperature"/>
+      <xs:element type="xs:string" name="flowerLight"/>
+      <xs:element ref="sat:watering" xmlns:sat="www.epam.kz/sat/"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

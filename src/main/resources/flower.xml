@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+1. Оранжерея.
+Растения, содержащиеся в оранжерее, имеют следующие характеристики:
+——Name — название растения;
+——Soil — почва для посадки, которая может быть следующих типов: под-
+золистая, грунтовая, дерново-подзолистая;
+——Origin — место происхождения растения;
+——Visual рarameters (должно быть несколько) — внешние параметры: цвет
+стебля, цвет листьев, средний размер растения;
+——Growing tips (должно быть несколько) — предпочтительные условия
+произрастания: температура (в градусах), освещение (светолюбиво либо
+нет), полив (мл в неделю);
+——Multiplying — размножение: листьями, черенками либо семенами.
+Корневой элемент назвать Flower.
+С помощью XSL преобразовать XML-файл в формат HTML, где отобра-
+зить растения по предпочитаемой температуре
+(по возрастанию). -->
+        <!--flowers in orangery -->
+    <flowers>
+     <flower>
+      <Name>Limon</Name>
+      <Soil></Soil>
+      <Origin></Origin>
+        <visualParameters xmlns:flw="www.epam.kz/sat/">
+            <flw:colourStem>red</flw:colourStem>
+            <flw:colourLeaf>green</flw:colourLeaf>
+            <flw:middleSize>10.5</flw:middleSize>
+        </visualParameters>
+        <growingTips xmlns:flw="www.epam.kz/sat/">
+            <temperature>26</temperature>
+            <flowerLight>LikeSun</flowerLight>
+            <flw:watering>500.87</flw:watering>
+        </growingTips>
+    <multiplying>by Leaf</multiplying>
+
+     </flower>
+   </flowers>
+        <!--New comments from someone -->

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/orangery"
+        xmlns:tns="http://www.example.com/orangery"
+        >
+    <element name="flowers">
+        <complexType>
+            <all>
+                <element name="flower"/>
+            </all>
+        </complexType>
+    </element>
+
+    <element name="flower" type="tns:flower"
+             minOccurs="0"
+             maxOccurs="unbounded">
+        <complexType>
+            <sequence>
+              <element name="name"/>
+                <element name="soil"/>
+                <element name="origin"/>
+                <element name="visual parameters"/>
+                <element name="growing tips"/>
+                <element name="multiplying"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="name" maxOccurs="1">
+    <simpleType>
+        <restriction base="ID">
+            <pattern value="[A-z|А-я]+"/>
+            <maxLength value="50"/>
+
+        </restriction>
+    </simpleType>
+    </element>
+
+    <simpleType name="soil">
+        <restriction base="string">
+            <enumeration value="Podzolist"></enumeration>
+            <enumeration value="Grynt"/>
+            <enumeration value="Dernovo-podzolist"/>
+
+        </restriction>
+    </simpleType>
+
+    <complexType name="origin" minOccurs="0">
+        <attribute name="country" type="string"
+                   use="required"/>
+        <restriction base="string">
+            <pattern value="[A-z|А-я]+"/>
+            <maxLength value="80"/>
+        </restriction>
+    </complexType>
+
+    <element  name="visualParameters" type="tns:visualParameters" minOccurs="1" maxOccurs="1">
+    <complexType >
+     <all>
+        <element name="colourStem" maxOccurs="1">
+            <restriction base="string">
+                <pattern value="[A-z|А-я]+"/>
+                <maxLength value="20"/>
+
+            </restriction>
+        </element>
+        <element name="colourLeaf" minOccurs="0" maxOccurs="1">
+            <restriction base="string">
+                <pattern value="[A-z|А-я]+"/>
+                <maxLength value="20"/>
+            </restriction>
+        </element>
+        <element name="middleSize" maxOccurs="1">
+            <complexType>
+            <restriction base="float">
+                <minInclusive value="0"/>
+                <maxInclusive value="1000"/>
+                ---------??????-----<pattern value="\d{3}"/>
+
+                </restriction>
+                <attribute name="dimension" use="required" type="string" default="cm"/>
+            </complexType>
+        </element>
+    </all>
+        </complexType>
+    </element>
+
+    <element  name="growingTips" type="tns:growingTips" minOccurs="1" maxOccurs="1">
+        <complexType >
+            <all>
+                <element name="temperature" minOccurs="1" maxOccurs="1">
+                    <restriction base="string">
+                        <pattern value="\d{2}-[C]"/>
+                        <maxLength value="3"/>
+                    </restriction>
+                    <attribute name="dimension" use="required" type="string" default="C"/>
+                </element>
+                <element name="flowerLight" minOccurs="0" maxOccurs="1">
+                    <restriction base="string">
+                        <enumeration value="like sun"/>
+                        <enumeration value="not like sun"/>
+                    </restriction>
+                </element>
+                <element name="watering" minOccurs="1" maxOccurs="1">
+                    <complexType>
+                        <restriction base="float">
+                            <minInclusive value="0"/>
+                            <maxInclusive value="10000"/>
+
+                        </restriction>
+                        <attribute name="frequency" use="required" type="string" default="ml/week"/>
+                    </complexType>
+                </element>
+            </all>
+        </complexType>
+    </element>
+
+    <element name="multiplying" minOccurs="0" maxOccurs="1">
+        <simpleType>
+            <restriction base="string">
+                <enumeration value="by Leaves"/>
+                <enumeration value="by Cuttings"/>
+                <enumeration value="by Seeds"/>
+
+            </restriction>
+        </simpleType>
+    </element>
+
+
+</schema>
