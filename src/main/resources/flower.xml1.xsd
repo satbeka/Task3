@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="www.epam.kz/sat/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="middleSize" type="xs:string"/>
-  <xs:element name="colourStem" type="xs:string"/>
-  <xs:element name="watering" type="xs:string"/>
-  <xs:element name="colourLeaf" type="xs:string"/>
-</xs:schema>

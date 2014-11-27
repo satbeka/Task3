@@ -18,21 +18,21 @@
 (по возрастанию). -->
         <!--flowers in orangery -->
     <flowers>
-     <flower>
+     <flower  xmlns:flw="www.epam.kz/sat/">
       <Name>Limon</Name>
-      <Soil></Soil>
-      <Origin></Origin>
-        <visualParameters xmlns:flw="www.epam.kz/sat/">
+      <Soil>Podzolist</Soil>
+      <Origin country="France">Paris</Origin>
+        <visualParameters >
             <flw:colourStem>red</flw:colourStem>
             <flw:colourLeaf>green</flw:colourLeaf>
-            <flw:middleSize>10.5</flw:middleSize>
+            <flw:middleSize dimension="cm">10.5</flw:middleSize>
         </visualParameters>
-        <growingTips xmlns:flw="www.epam.kz/sat/">
-            <temperature>26</temperature>
-            <flowerLight>LikeSun</flowerLight>
-            <flw:watering>500.87</flw:watering>
+        <growingTips>
+            <temperature dimension="C">26</temperature>
+            <flowerLight>not like sun</flowerLight>
+            <flw:watering frequency="ml/week">500.87</flw:watering>
         </growingTips>
-    <multiplying>by Leaf</multiplying>
+    <multiplying>by Leaves</multiplying>
 
      </flower>
    </flowers>
