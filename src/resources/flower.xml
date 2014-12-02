@@ -20,9 +20,10 @@
     <flowers>
 
      <flower  xmlns:flw="www.epam.kz/sat/">
-      <Name>Limon</Name>
-      <Soil>Podzolist</Soil>
-      <Origin country="France">Paris</Origin>
+         <id>10001</id>
+      <name>Limon</name>
+      <soil>Podzolist</soil>
+      <origin country="France">Paris</origin>
         <visualParameters >
             <flw:colourStem>red</flw:colourStem>
             <flw:colourLeaf>green</flw:colourLeaf>
