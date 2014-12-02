@@ -1,8 +1,6 @@
 package entity;
 
-/**
- * Created by 1 on 02.12.2014.
- */
+
 public class Flower {
     private Long id;
     private String name;
