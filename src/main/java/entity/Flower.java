@@ -1,8 +1,11 @@
 package entity;
 
+import java.util.Comparator;
+import java.util.Objects;
+
 /*
 * */
-public class Flower {
+public class Flower implements Comparator<Flower>{
     private Long id;
     private String name;
     private String soil;
@@ -100,6 +103,13 @@ public class Flower {
     public void setMultiplying(String multiplying) {
         this.multiplying = multiplying;
     }
+
+
+    @Override
+    public int compare(Flower o1, Flower o2) {
+        return Integer.compare(o1.getGrowingTips().getTemperature(), o2.getGrowingTips().getTemperature());
+    }
+
 
     private static class GrowingTips{
 
