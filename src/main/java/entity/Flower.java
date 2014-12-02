@@ -1,8 +1,6 @@
 package entity;
 
 import java.util.Comparator;
-import java.util.Objects;
-
 /*
 * */
 public class Flower implements Comparator<Flower>{
