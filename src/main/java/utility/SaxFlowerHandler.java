@@ -45,7 +45,7 @@ public class SaxFlowerHandler extends DefaultHandler{
 
         if (elementName == null) return;
         String s = accumulator.toString().trim();
-        switch (elementName){
+        switch (){
 
             case "id":
 
