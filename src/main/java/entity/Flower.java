@@ -108,8 +108,31 @@ public class Flower implements Comparator<Flower>{
         return Integer.compare(o1.getGrowingTips().getTemperature(), o2.getGrowingTips().getTemperature());
     }
 
+    public double getWatering() {
+        return growingTips.getWatering();
+    }
 
-    private static class GrowingTips{
+    public int getTemperature() {
+        return growingTips.getTemperature();
+    }
+
+    public void setFlowerLight(String flowerLight) {
+        growingTips.setFlowerLight(flowerLight);
+    }
+
+    public void setWatering(double watering) {
+        growingTips.setWatering(watering);
+    }
+
+    public String getFlowerLight() {
+        return growingTips.getFlowerLight();
+    }
+
+    public void setTemperature(int temperature) {
+        growingTips.setTemperature(temperature);
+    }
+
+    private class GrowingTips{
 
         private int temperature;
         private String flowerLight;
@@ -156,8 +179,31 @@ public class Flower implements Comparator<Flower>{
         }
     }
 
+    public void setColourStem(String colourStem) {
+        visualParameters.setColourStem(colourStem);
+    }
 
-    private static class VisualParameters {
+    public String getColourLeaf() {
+        return visualParameters.getColourLeaf();
+    }
+
+    public void setColourLeaf(String colourLeaf) {
+        visualParameters.setColourLeaf(colourLeaf);
+    }
+
+    public void setMiddleSize(double middleSize) {
+        visualParameters.setMiddleSize(middleSize);
+    }
+
+    public double getMiddleSize() {
+        return visualParameters.getMiddleSize();
+    }
+
+    public String getColourStem() {
+        return visualParameters.getColourStem();
+    }
+
+    private class VisualParameters {
         private String colourStem;
         private String colourLeaf;
         private double middleSize;
