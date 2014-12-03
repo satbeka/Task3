@@ -47,7 +47,7 @@ public class SaxFlowerHandler extends DefaultHandler{
         String s = accumulator.toString().trim();
         switch (elementName){
 
-            case "8id":
+            case "id":
 
                 flower.setId(Long.parseLong(s));
                 break;
