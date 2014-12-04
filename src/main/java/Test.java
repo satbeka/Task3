@@ -1,4 +1,5 @@
 import entity.Flower;
+import utility.DomParserRunner;
 import utility.SaxFlowerHandler;
 import utility.SaxParserRunner;
 import utility.StaxParserRunner;
@@ -24,6 +25,11 @@ public class Test {
         StaxParserRunner staxParserRunner=new StaxParserRunner();
         Flower flower2=staxParserRunner.parse(xmlInput2);
         System.out.println(flower2);
+
+        InputStream xmlInput3 = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
+        DomParserRunner domParserRunner=new DomParserRunner();
+        Flower flower3=domParserRunner.parse(xmlInput3);
+        System.out.println(flower3);
 
     }
 
