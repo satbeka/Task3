@@ -37,5 +37,44 @@
     <multiplying>by Leaves</multiplying>
 
      </flower>
-   </flowers>
+
+    <flower  xmlns:flw="www.epam.kz/sat/">
+        <id>10002</id>
+        <name>Tomato</name>
+        <soil>Podzolist</soil>
+        <origin country="Cuba">Havano</origin>
+        <visualParameters >
+            <flw:colourStem>deep red</flw:colourStem>
+            <flw:colourLeaf>black</flw:colourLeaf>
+            <flw:middleSize dimension="cm">400</flw:middleSize>
+        </visualParameters>
+        <growingTips>
+            <temperature dimension="C">6</temperature>
+            <flowerLight>like sun</flowerLight>
+            <flw:watering frequency="ml/week">500.87</flw:watering>
+        </growingTips>
+        <multiplying>by Leaves</multiplying>
+
+    </flower>
+
+    <flower  xmlns:flw="www.epam.kz/sat/">
+        <id>10003</id>
+        <name>Potato</name>
+        <soil>Podzolist</soil>
+        <origin country="Belarus">Minsk</origin>
+        <visualParameters >
+            <flw:colourStem>green</flw:colourStem>
+            <flw:colourLeaf>green</flw:colourLeaf>
+            <flw:middleSize dimension="cm">25</flw:middleSize>
+        </visualParameters>
+        <growingTips>
+            <temperature dimension="C">16</temperature>
+            <flowerLight>not like sun</flowerLight>
+            <flw:watering frequency="ml/week">500.87</flw:watering>
+        </growingTips>
+        <multiplying>by Leaves</multiplying>
+
+    </flower>
+
+</flowers>
         <!--New comments from someone -->

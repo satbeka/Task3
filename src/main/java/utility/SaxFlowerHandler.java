@@ -38,10 +38,11 @@ public class SaxFlowerHandler extends DefaultHandler{
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         accumulator.setLength(0);
         elementName = qName;
-        if (qName.equals("flw:middleSize")||qName.equals("temperature"))
-            attributeDimension = (attributes.getLocalName(0).trim()+" = "+attributes.getValue("dimension").trim());
-             System.out.println("   attributeDimension="+attributeDimension);
-
+        if (qName.equals("flw:middleSize") || qName.equals("temperature")) {
+            attributeDimension = (attributes.getLocalName(0).trim() + " = " + attributes.getValue("dimension").trim());
+            System.out.println("   attributeDimension=" + attributeDimension);
+        }
+        ;
     }
 
     @Override

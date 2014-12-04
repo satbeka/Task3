@@ -1,6 +1,7 @@
 import entity.Flower;
 import utility.SaxFlowerHandler;
 import utility.SaxParserRunner;
+import utility.StaxParserRunner;
 
 import java.io.InputStream;
 
@@ -12,13 +13,17 @@ public class Test {
 
     public static void main(String[] args) throws Exception{
 
-        InputStream xmlInput = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
+        InputStream xmlInput1 = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
 
         SaxParserRunner saxParserRunner=new SaxParserRunner();
-        Flower flower=saxParserRunner.parse(xmlInput);
+        Flower flower1=saxParserRunner.parse(xmlInput1);
+        System.out.println(flower1);
 
 
-        System.out.println(flower);
+        InputStream xmlInput2 = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
+        StaxParserRunner staxParserRunner=new StaxParserRunner();
+        Flower flower2=staxParserRunner.parse(xmlInput2);
+        System.out.println(flower2);
 
     }
 
