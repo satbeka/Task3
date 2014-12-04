@@ -13,6 +13,11 @@ public class SaxFlowerHandler extends DefaultHandler{
     private StringBuffer accumulator;
     private String elementName;
     private String attributeDimension;
+
+    public Flower getFlower() {
+        return this.flower;
+    }
+
     private Flower flower;
 
     @Override
