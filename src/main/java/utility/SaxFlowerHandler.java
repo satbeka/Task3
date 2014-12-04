@@ -38,9 +38,9 @@ public class SaxFlowerHandler extends DefaultHandler{
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         accumulator.setLength(0);
         elementName = qName;
-        if (qName.equals("middleSize")||qName.equals("temperature"))
-            attributeDimension = (attributes.getLocalName(1).trim()+" = "+attributes.getValue("dimension").trim());
-
+        if (qName.equals("flw:middleSize")||qName.equals("temperature"))
+            attributeDimension = (attributes.getLocalName(0).trim()+" = "+attributes.getValue("dimension").trim());
+             System.out.println("   attributeDimension="+attributeDimension);
 
     }
 
@@ -65,10 +65,10 @@ public class SaxFlowerHandler extends DefaultHandler{
             case "origin":
                 flower.setOrigin(s);
                 break;
-            case "colourStem":
+            case "flw:colourStem":
                 flower.setColourStem(s);
                 break;
-            case "colourLeaf":
+            case "flw:colourLeaf":
                 flower.setColourLeaf(s);
                 break;
             case "temperature":
