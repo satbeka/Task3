@@ -1,7 +1,9 @@
 import entity.Flower;
 import utility.*;
 
+import java.io.File;
 import java.io.InputStream;
+import java.util.ResourceBundle;
 
 /**
  * Created by 1 on 04.12.2014.
@@ -32,6 +34,16 @@ public class Test {
         JaxbParserRunner jaxbParserRunner=new JaxbParserRunner();
         Flower flower4=domParserRunner.parse(xmlInput4);
         System.out.println("Jaxb="+flower4);
+
+
+        //ResourceBundle resourceBundle=ResourceBundle.getBundle("flower_scheme.xsd");
+
+        //ClassLoader classLoader = getClass().getClassLoader();
+        File scheme=new File(SaxParserRunner.class.getClassLoader().getResource("flower_scheme.xsd").getFile());
+
+
+        InputStream xmlInput5 = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
+        XmlValidate.check(scheme,xmlInput5);
 
     }
 
