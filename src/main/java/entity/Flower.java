@@ -1,14 +1,18 @@
 package entity;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Comparator;
 /*
 * */
+@XmlRootElement
 public class Flower implements Comparator<Flower>{
     private Long id;
     private String name;
     private String soil;
     private String origin;
     private VisualParameters visualParameters=new VisualParameters();
+    @XmlElement(required = true)
     private GrowingTips growingTips=new GrowingTips();
     private String multiplying;
 
@@ -120,6 +124,7 @@ public class Flower implements Comparator<Flower>{
         growingTips.setFlowerLight(flowerLight);
     }
 
+    @XmlElement
     public void setWatering(double watering) {
         growingTips.setWatering(watering);
     }
@@ -136,6 +141,7 @@ public class Flower implements Comparator<Flower>{
 
         private int temperature;
         private String flowerLight;
+        @XmlElement(required = true)
         private double watering;
 
         public GrowingTips(){}
@@ -174,6 +180,7 @@ public class Flower implements Comparator<Flower>{
             return watering;
         }
 
+        @XmlElement
         public void setWatering(double watering) {
             this.watering = watering;
         }
@@ -187,6 +194,7 @@ public class Flower implements Comparator<Flower>{
         return visualParameters.getColourLeaf();
     }
 
+    @XmlElement
     public void setColourLeaf(String colourLeaf) {
         visualParameters.setColourLeaf(colourLeaf);
     }
@@ -202,7 +210,7 @@ public class Flower implements Comparator<Flower>{
     public String getColourStem() {
         return visualParameters.getColourStem();
     }
-
+    @XmlRootElement
     private class VisualParameters {
         private String colourStem;
         private String colourLeaf;
@@ -236,6 +244,7 @@ public class Flower implements Comparator<Flower>{
             return colourLeaf;
         }
 
+        @XmlElement
         public void setColourLeaf(String colourLeaf) {
             this.colourLeaf = colourLeaf;
         }

@@ -1,8 +1,5 @@
 import entity.Flower;
-import utility.DomParserRunner;
-import utility.SaxFlowerHandler;
-import utility.SaxParserRunner;
-import utility.StaxParserRunner;
+import utility.*;
 
 import java.io.InputStream;
 
@@ -30,6 +27,11 @@ public class Test {
         DomParserRunner domParserRunner=new DomParserRunner();
         Flower flower3=domParserRunner.parse(xmlInput3);
         System.out.println(flower3);
+
+        InputStream xmlInput4 = SaxParserRunner.class.getClassLoader().getResourceAsStream("flower.xml");
+        JaxbParserRunner jaxbParserRunner=new JaxbParserRunner();
+        Flower flower4=domParserRunner.parse(xmlInput4);
+        System.out.println("Jaxb="+flower4);
 
     }
 

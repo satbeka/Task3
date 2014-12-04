@@ -16,6 +16,12 @@ public class StaxParserRunner {
 
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
         XMLStreamReader reader=inputFactory.createXMLStreamReader(xmlInput);
+
+
+        
+
+
+
         String  name;
         Flower flower=new Flower();
         while (reader.hasNext()) {

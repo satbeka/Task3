@@ -11,6 +11,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.FileWriter;
 import java.io.InputStream;
 
 /**
@@ -42,7 +47,18 @@ public class DomParserRunner {
                     flower.setMultiplying(getElementTextContent(flowerElement, "multiplying"));
 
             }
-        
+
+
+        //
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new FileWriter("flower.html"));
+            transformer.transform(source, result);
+
+        //
+
+
 
         return flower;
     }

@@ -32,7 +32,7 @@
         <growingTips>
             <temperature dimension="C">26</temperature>
             <flowerLight>not like sun</flowerLight>
-            <flw:watering frequency="ml/week">500.87</flw:watering>
+            <watering frequency="ml/week">500.87</watering>
         </growingTips>
     <multiplying>by Leaves</multiplying>
 
