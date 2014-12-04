@@ -17,6 +17,7 @@ public class SaxParserRunner {
     SAXParser      saxParser = factory.newSAXParser();
     SaxFlowerHandler handler   = new SaxFlowerHandler();
     saxParser.parse(xmlInput, handler);
+
     return handler.getFlower();}
 
 
