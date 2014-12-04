@@ -14,7 +14,7 @@ public class SaxParserRunner {
     public Flower parse(InputStream xmlInput) throws Exception{
 
     SAXParserFactory factory = SAXParserFactory.newInstance();
-    SAXParser      saxParser = factory.newSAXParser();
+    SAXParser  saxParser = factory.newSAXParser();
     SaxFlowerHandler handler   = new SaxFlowerHandler();
     saxParser.parse(xmlInput, handler);
 
