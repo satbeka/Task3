@@ -36,6 +36,8 @@ public class Test {
         System.out.println("Jaxb="+flower4);
 
 
+        JaxbMarshal.toXml();
+
         //ResourceBundle resourceBundle=ResourceBundle.getBundle("flower_scheme.xsd");
 
         //ClassLoader classLoader = getClass().getClassLoader();
